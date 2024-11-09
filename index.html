@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NEXT Website</title>
+    <title>РОЛІТ</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!--NAVBAR SECTION-->
+    <!-- NAVBAR SECTION -->
     <nav class="navbar">
         <div class="navbar_container">
-            <a href="/" id="navbar_logo">
-                <i class="fa-sharp fa-thin fa-volume"></i>Привіт <!-- іконка не працює -->
+            <a href="index.html" id="navbar_logo">
+                <i class="fas fa-volume-up"></i>Роліт <!-- іконка не працює -->
             </a>            
             <div class="navbar_toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -20,80 +20,126 @@
             </div>
             <ul class="navbar_menu">
                 <li class="navbar_item">
-                    <a href="/" class="navbar_links">Хата</a>
+                    <a href="history.html" class="navbar_links" id="history-button">Історія будинку</a>
                 </li>
                 <li class="navbar_item">
-                    <a href="/tech.html" class="navbar_links">Технології</a>
+                    <a href="residents.html" class="navbar_links" id="residents-button">Мешканці</a>
                 </li>
                 <li class="navbar_item">
-                    <a href="/" class="navbar_links">Products</a>
+                    <a href="photos.html" class="navbar_links" id="photos-button">Фото</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="sources.html" class="navbar_links" id="sources-button">Джерела</a>
                 </li>
                 <li class="navbar_btn">
-                    <a href="/" class="button">Sign Up</a>
+                    <a href="about.html" class="button" id="about-button">На головну</a>
                 </li>
-            </ul>
+            </ul>                       
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-     <div class="main">
+    <div class="main">
         <div class="main_container">
             <div class="main_content">
                 <h1>РОЛІТ</h1>
-                <h2>Історія РОЛІТу, її мешканців та творінь</h2>
-                <p>lower text</p>
-                <button class="main_btn"><a href="#">Почнімо!</a"></button>
+                <p>Роліт («Робітник літератури») – житловий кооператив, збудований у 1934 р. в Києві на вулиці Леніна, 68 (тепер вулиця Богдана Хмельницького, 68). Основними мешканцями були київські літератори зі сім’ями, а також деякі митці инших галузей. Споруда має два корпуси побудовані в різні роки. Протягом семи десятиліть тут творили великі літературні корифеї. Пережив цей будинок і три хвилі сталінських репресій хвилі репресій. Роліт – абсолютний рекордсмен України за кількістю меморіальних дошок на своєму фасаді.
+                </p>
+                <button class="main_btn"><a href="about.html"><span>Далі</span></a></button>
             </div>
             <div class="main_img--container">
-                <img src="images/img.svg" alt="pic" id="main_img"> <!--фото-->
-            </div>
-        </div>
-     </div>
+                <img src="images/RolitMain_back.jpg" alt="pic" id="back_img" class="scroll-image back">
+                <img src="images/RolitMain.jpg" alt="pic" id="main_img" class="scroll-image">
+            </div>	                    
+    </div>
 
-<!-- Services Section -->
- <div class="services">
-    <h1>Текстовий текст</h1>
-    <div class="services_container">
-        <div class="services_card">
-            <h2>Багато тексту</h2>
-            <p>Ще якийсь текст</p>
-            <button>Get Started</button>
+    <!-- Quote Section -->
+    <div class="quote_container">
+        <p class="quote_text">«Ухвалою уряду з Харкова до Києва перенесено столицю Радянської України. В Києві спішно споруджувалися будинки і для установ, і для новоприбульців. Поспіхом зводили будинок, призначений для житла письменників. Квартир було небагато.» (Зі спогадів Миколи Бажана)</p>
+    </div>
+
+<!-- Residents Section -->
+<!-- Residents Section -->
+<div class="residents">
+    <div class="residents_container">
+        <div class="residents_h1">
+            <h1>Мешканці</h1>
+        </div>
+        <div class="writers-container" id="writers-grid">
+            <!-- Cards go here -->
         </div>
     </div>
- </div>
 
-<!--- Footer Section -->
-<div class="footer_container">
-    <div class="footer_links">
-        <div class="footer_link--wrapper">
-            <div class="footer_link-items">
-                <h2>About Us</h2>
-                <a href="/">How it works</a>
-                <a href="/">Hoefyeforks</a>
-                <a href="/">Hefehbcjehv bdh works</a>
-                <a href="/">Hecwfkebweorks</a>
-                <a href="/">Howkejdeckehrks</a>
-            </div>
-        </div>
-        <div class="footer_link--wrapper">
-            <div class="footer_link-items">
-                <h2>About Us</h2>
-                <a href="/">How it works</a>
-                <a href="/">Hoefyeforks</a>
-                <a href="/">Hefehbcjehv bdh works</a>
-                <a href="/">Hecwfkebweorks</a>
-                <a href="/">Howkejdeckehrks</a>
-            </div>
-        </div>
-    </div>
-    <div class="social_media">
-        <div class="social_media--wrap>
-            <div class="footer_logo">
-                <a href="/" id="footer_logo"><i class="fas-faa-gem"></i>Next</a>
-            </div>
+    <div class="button-container">
+        <button class="residents_button">
+            <a href="residents.html">Більше</a>
+        </button>
     </div>
 </div>
 
-    <script src="app.js"></script>
+
+<!-- Gallery section-->
+
+<div class="gallery-container">
+    <h2 class="gallery-title">Gallery</h2>
+    <div class="gallery-grid">
+        <img src="images/1_gallery.jpg" class="grid-item-1" alt="Image 1">
+        <img src="images/2_gallery.jpg" class="grid-item-2" alt="Image 2">
+        <img src="images/3_gallery.jpg" class="grid-item-3" alt="Image 3">
+        <img src="images/4_gallery.jpg" class="grid-item-4" alt="Image 4">
+        <img src="images/5_gallery.jpg" class="grid-item-5" alt="Image 5">
+        <img src="images/6_gallery.jpg" class="grid-item-6" alt="Image 6">
+        <img src="images/7_gallery.jpg" class="grid-item-7" alt="Image 7">
+        <img src="images/8_gallery.jpg" class="grid-item-8" alt="Image 8">
+    </div>
+    <button class="load-more-button">Загрузити ще</button>
+</div>
+
+
+
+
+
+
+    <!-- Footer Section -->
+    <div class="footer_container">
+        <div class="footer_links">
+            <div class="footer_link--wrapper">
+                <div class="footer_link-items">
+                    <h2>Проєкт</h2>
+                    <a href="/">Текст</a>
+                    <a href="/">Текст</a>
+                    <a href="/">Текст</a>
+                    <a href="/">Текст</a>
+                    <a href="/">Текст</a>
+                </div>
+            </div>
+            <div class="footer_link--wrapper">
+                <div class="footer_link-items">
+                    <h2>Про нас</h2>
+                    <a href="/">Текст</a>
+                    <a href="/">Текст</a>
+                    <a href="/">Текст</a>
+                    <a href="/">Текст</a>
+                    <a href="/">Текст</a>
+                </div>
+            </div>
+        </div>
+        <div class="social_media">
+            <div class="social_media--wrap">
+                <div class="footer_logo">
+                    <a href="/" id="footer_logo"><i class="fas-faa-gem"></i>Далі</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js" defer>
+		/* comment
+		*/
+	</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script>
+        AOS.init(); // Initialize AOS
+    </script>
 </body>
 </html>
