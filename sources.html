@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Джерела РОЛІТ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="index.html" id="navbar_logo">
+                <i class="fas fa-volume-up"></i>Роліт
+            </a>            
+            <div class="navbar_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="history.html" class="navbar_links" id="history-button">Історія будинку</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="residents.html" class="navbar_links" id="residents-button">Мешканці</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="photos.html" class="navbar_links" id="photos-button">Фото</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="sources.html" class="navbar_links" id="sources-button">Джерела</a>
+                </li>
+                <li class="navbar_btn">
+                    <a href="index.html" class="button" id="about-button">На головну</a>
+                </li>
+            </ul>                       
+        </div>
+    </nav>
+    <main>
+        <h1>Джерела РОЛІТ</h1>
+        <p>Тут буде інформація про джерела.</p>
+    </main>
+    <script>
+        const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.navbar_menu');
+
+menu.addEventListener('click', function () {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+});
+    </script>
+</body>
+</html>
