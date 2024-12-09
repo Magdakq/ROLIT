@@ -1,0 +1,336 @@
+body, html {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: 'Rutenia';
+  src: url('fonts/Rutenia.woff2') format('woff2'),
+       url('fonts/Rutenia.woff') format('woff'),
+       url('fonts/Rutenia.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'NAMU-1930';
+  src: url('fonts/NAMU-1930.eot') format('embedded-opentype'),
+       url('fonts/NAMU-1930.woff') format('woff'),
+       url('fonts/NAMU-1930.woff2') format('woff2'),
+       url('fonts/NAMU-1930.ttf') format('truetype');
+}
+
+
+body {
+  font-family: 'NAMU-1930', sans-serif;
+}
+
+/*зАБРАТИ ЯКЩО ЩО*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar { /*верхня пластина*/
+  background: #c4cfbf;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar_container { /*те, в чому сидить next*/
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbar_logo { /*логотип*/
+  font-family: 'Rutenia', sans-serif;
+  background-color: #000000;
+  background-image: linear-gradient(to top, #000000 0%, #000000 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.fa-gem {
+  margin-right: 0.5rem;
+}
+
+.navbar_menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+
+.navbar_item {
+  height: 80px;
+}
+
+.navbar_links {
+  font-family: 'Rutenia', sans-serif;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.navbar_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.button{
+  font-family: 'Rutenia', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  background: #b3cca8;
+  color: #000000;
+}
+
+.button:hover {
+  background: #8da783;
+  transition: all 0.5s ease;
+}
+
+.navbar_links:hover {
+  color: #8da783;
+  transition: all 0.35s ease;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar_container {
+      display: flex;
+      justify-content: space-between;
+      height: 80px;
+      z-index: 1;
+      width: 100%;
+      max-width: 1300px;
+      padding: 0;
+  }
+
+  .navbar_menu {
+      opacity: 1;
+      display: grid;
+      grid-template-columns: auto;
+      margin: 0;
+      width: 100%;
+      position: absolute;
+      top: -1000px;
+      opacity: 0;
+      transition: all 0.5s ease;
+      height: 50vh;
+      z-index: -1;
+      background: #000000;
+  }
+
+ .navbar_menu.active {
+      background: #c4cfbf;
+      top: 80px;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 99;
+      height: 60vh;
+      font-size: 1.6rem;
+  }
+
+  #navbar_logo {
+      padding-left: 25px;
+  }
+
+
+.navbar_toggle .bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background: #000000;
+}
+
+.navbar_item {
+  width: 100%;
+}
+
+.navbar_links {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  display: table;
+}
+
+#mobile-menu {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  transform: translate(5%, 20%);
+}
+
+.navbar_btn {
+  padding-bottom: 2rem;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80px;
+  margin: 0;
+}
+
+.navbar_toggle .bar {
+  display: block;
+  cursor: pointer;
+}
+
+#mobile-menu.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg); /* Adjust transform as needed */
+}
+
+#mobile-menu.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg); /* Adjust transform as needed */
+}
+}
+
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  font-family: 'Rutenia', sans-serif;
+  text-align: center;
+  margin-top: 50px; /* Increased top margin */
+  position: relative;
+  display: inline-block; /* Ensures the underline is only as wide as the text */
+}
+
+.header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Adjust to place the line just below the text */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #804000 0%, #c16203 20%, #e97604 40%, #c16203 60%, #804000 100%);
+}
+
+
+
+
+.first_container {
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.first_container p {
+  margin-bottom: 7px;
+  font-size: 1rem;
+}
+
+.first_container a {
+  color: rgb(198, 86, 0);
+  text-decoration: none;
+}
+
+.first_container a:hover {
+  text-decoration: underline;
+}
+
+.first_container .dot {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.orange-underline {
+  font-family: 'Rutenia', sans-serif;
+  font-weight: 100;
+  font-size: 1.6rem;
+}
+
+
+footer {
+  background-color: #C4CFBF;
+  padding: 20px 50px;
+  color: rgb(0, 0, 0);
+  font-family: 'NAMU-1930', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  text-align: center;
+}
+
+.right ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.right li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.right i {
+  margin-right: 10px;
+}
+
+.right a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.right a:hover {
+  text-decoration: underline;
+}

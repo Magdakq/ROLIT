@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>РОЛІТ</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="index.html" id="navbar_logo">
+                <i></i>Роліт <!-- іконка не працює -->
+            </a>            
+            <div class="navbar_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="history.html" class="navbar_links" id="history-button">Історія будинку</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="residents.html" class="navbar_links" id="residents-button">Мешканці</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="photos.html" class="navbar_links" id="photos-button">Фото</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="sources.html" class="navbar_links" id="sources-button">Джерела</a>
+                </li>
+                <li class="navbar_btn">
+                    <a href="index.html" class="button" id="about-button">На головну</a>
+                </li>
+            </ul>                       
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="main">
+        <div class="main_container">
+            <div class="main_content">
+                <h1>РОЛІТ</h1>
+                <p>Роліт («Робітник літератури») – житловий кооператив, збудований у 1934 р. в Києві на вулиці Леніна, 68 (тепер вулиця Богдана Хмельницького, 68). Основними мешканцями були київські літератори зі сім’ями, а також деякі митці инших галузей. Споруда має два корпуси побудовані в різні роки. Протягом семи десятиліть тут творили великі літературні корифеї. Пережив цей будинок і три хвилі сталінських репресій. Роліт – абсолютний рекордсмен України за кількістю меморіальних дошок на своєму фасаді.
+                </p>
+                <button class="main_btn"><a href="history.html">Далі</a></button>
+            </div>
+            <div class="main_img--container">
+                <img src="images/RolitMain_back.jpg" alt="pic" id="back_img" class="scroll-image back">
+                <img src="images/RolitMain.jpg" alt="pic" id="main_img" class="scroll-image">
+            </div>	                    
+    </div>
+
+    <!-- Quote Section -->
+    <div class="quote_container">
+        <p class="quote_text">«Ухвалою уряду з Харкова до Києва перенесено столицю Радянської України. В Києві спішно споруджувалися будинки і для установ, і для новоприбульців. Поспіхом зводили будинок, призначений для житла письменників. Квартир було небагато.» (Зі спогадів Миколи Бажана)</p>
+    </div>
+
+<!-- Residents Section -->
+<!-- Residents Section -->
+<div class="residents">
+    <div class="residents_container">
+        <div class="residents_h1">
+            <h1>Мешканці</h1>
+        </div>
+        <div class="writers-container" id="writers-grid">
+            <!-- Cards go here -->
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="residents_button">
+            <a href="residents.html">Більше</a>
+        </button>
+    </div>
+</div>
+
+
+<!-- Gallery Section -->
+<div class="gallery-wrapper">
+    <div class="gallery_title">
+        <h2>Галерея</h2>
+    </div>
+
+    <div class="gallery-container">
+        <img src="images/gallery_photo.jpg" alt="Image 1">
+    </div>
+
+    <div class="button-container">
+        <a href="photos.html">
+            <button class="load-more-button">Загрузити ще</button>
+        </a>
+    </div>
+</div>
+
+<div class="map-container">
+    <h1>
+        Локація
+    </h1>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.636595860086!2d30.50078361209187!3d50.447869287431246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf006b73df75%3A0x49256505ffc2152d!2z0JHRg9C00LjQvdC-0LogwqvQoNC-0LvRltGCwrs!5e0!3m2!1suk!2sua!4v1733704529668!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+
+
+                 
+<footer>
+    <div class="footer-container">
+        <div class="left">
+            <p>Rolit, 2024.</p>
+        </div>
+        <div class="right">
+            <ul>
+                <li>
+                    <a href="https://www.tiktok.com/@budynok_rolit?_t=ZM-8s3nuXyuLx7&_r=1" target="_blank">
+                        <i class="fa-brands fa-tiktok"></i> Tik Tok
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/_rolit_building/?igsh=MXZ2cGM5dndoZGtuaA%3D%3D&utm_source=qr#" target="_blank">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </footer>
+
+
+
+    <script src="app.js" defer>
+		/* comment
+		*/
+	</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script>
+        AOS.init(); // Initialize AOS
+    </script>
+</body>
+</html>

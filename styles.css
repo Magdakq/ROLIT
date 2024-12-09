@@ -1,0 +1,699 @@
+body, html {
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'Rutenia';
+    src: url('fonts/Rutenia.woff2') format('woff2'),
+         url('fonts/Rutenia.woff') format('woff'),
+         url('fonts/Rutenia.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'NAMU-1930';
+    src: url('fonts/NAMU-1930.eot') format('embedded-opentype'),
+         url('fonts/NAMU-1930.woff') format('woff'),
+         url('fonts/NAMU-1930.woff2') format('woff2'),
+         url('fonts/NAMU-1930.ttf') format('truetype');
+}
+
+
+body {
+    font-family: 'NAMU-1930', sans-serif;
+}
+
+/*зАБРАТИ ЯКЩО ЩО*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar { /*верхня пластина*/
+    background: #c4cfbf;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar_container { /*те, в чому сидить next*/
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar_logo { /*логотип*/
+    font-family: 'Rutenia', sans-serif;
+    background-color: #000000;
+    background-image: linear-gradient(to top, #000000 0%, #000000 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.fa-gem {
+    margin-right: 0.5rem;
+}
+
+.navbar_menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar_item {
+    height: 80px;
+}
+
+.navbar_links {
+    font-family: 'Rutenia', sans-serif;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navbar_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.button{
+    font-family: 'Rutenia', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background: #b3cca8;
+    color: #000000;
+}
+
+.button:hover {
+    background: #8da783;
+    transition: all 0.5s ease;
+}
+
+.navbar_links:hover {
+    color: #8da783;
+    transition: all 0.35s ease;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar_container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar_menu {
+        opacity: 1;
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background: #000000;
+    }
+
+   .navbar_menu.active {
+        background: #c4cfbf;
+        top: 80px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 60vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar_logo {
+        padding-left: 25px;
+    }
+
+
+.navbar_toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #000000;
+}
+
+.navbar_item {
+    width: 100%;
+}
+
+.navbar_links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+}
+
+#mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+}
+
+.navbar_btn {
+    padding-bottom: 2rem;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin: 0;
+}
+
+.navbar_toggle .bar {
+    display: block;
+    cursor: pointer;
+}
+
+#mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Adjust transform as needed */
+}
+
+#mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* Adjust transform as needed */
+}
+}
+
+/* HERO SECTION CSS*/
+.main {
+    background-color: #f5f5f5;
+}
+
+.main_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: auto;
+    height: 80vh;
+    padding: 0;
+    background-color: #f5f5f5;
+    z-index: 1;
+    width: 100vw;
+}
+
+.main_content h1 {
+    font-family: 'Rutenia', sans-serif;
+    font-size: 4rem;
+    background-color: #414141;
+    background-image: linear-gradient(to top, #4d4d4d 0%, #000000 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    position: relative;
+    padding-bottom: 5px;
+    margin-left: 0.5cm;
+}
+
+.main_content h1:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-image: linear-gradient(to right, #804000 0%, #c16203 20%, #e97604 40%, #c16203 60%, #804000 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.main_content p {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #000000;
+    margin-left: 0.5cm;
+}
+
+    .main_btn {
+        border-radius: 4px;
+        background-color: #ffffff;
+        border: 4px solid #b35c04;
+        color: #ffffff;
+        text-align: center;
+        font-size: 28px;
+        padding: 12px;
+        width: 180px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 24px;
+        box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+        display: inline-block;
+        position: relative;
+    }
+        
+    .main_btn a {
+        position: relative;
+        z-index: 2;
+        color: #000000;
+        text-decoration: none;
+    }
+    
+    .main_btn:after {
+        content:'»';
+        position: absolute;
+        opacity: 0;  
+        top: 14px;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .main_btn:hover {
+        padding-right: 24px;
+        padding-left: 8px;
+        background-color: #cdcdcd;
+        border-color: #ff8113;
+    }
+    
+    .main_btn:hover:after {
+        opacity: 1;
+        right: 10px;
+    }
+    
+
+.main_img--container {
+    position: relative; 
+    width: 80%; 
+    margin: 0 auto; 
+}
+
+#main_img, #back_img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease; 
+    cursor: pointer; 
+}
+
+#back_img {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1; 
+    transform: scale(1.1); 
+}
+
+#main_img {
+    position: relative; 
+    z-index: 2; 
+    transform: scale(1); 
+}
+
+.main_img--container:hover #main_img {
+    transform: scale(1.04); 
+}
+
+.main_img--container:hover #back_img {
+    transform: scale(1.2); 
+}
+
+/* Tablet and Desktop Responsive */
+@media screen and (max-width: 1024px) {
+    .main_container {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+
+    .main_content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .main_content h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .main_content h2 {
+        font-size: 3rem;
+    }
+
+    .main_content p {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+}
+
+
+/*Quote section CSS*/
+.quote_container {
+    background:#C4CFBF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20vh;
+    margin: 30px 0;
+}
+
+.quote_text {
+    text-align: center;
+    margin: 45px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .quote_container{
+        height: 25vh;
+    }
+}
+
+
+/*Residents*/
+
+/* Residents Container */
+/* Residents Section */
+.residents {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.residents_h1 h1 {
+    font-family: 'Rutenia', sans-serif;
+    font-size: 36px; /* Adjust size as needed */
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+/* Container for writer cards */
+.writers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Individual writer card */
+.writer-card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    opacity: 0; /* Starts transparent */
+    transform: translateY(20px); /* Slightly moved down */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    z-index: 1;
+}
+
+/* Animation for fade-up effect */
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.writer-card:hover {
+    transform: translateY(0) scale(1.05);
+    cursor: pointer;
+}
+
+/* Information overlay on each writer card */
+.writer-info {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.writer-info h3 {
+    font-family: 'Rutenia', sans-serif;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+
+.writer-info p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+}
+
+/* Button container styles */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; 
+}
+
+/* "Більше" button styles */
+.residents_button {
+    display: inline-flex;
+    font-family: 'NAMU-1930', sans-serif;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Link inside the button */
+.residents_button a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Orange arrow that fades in from the right */
+.residents_button::after {
+    content: '>';
+    font-size: 20px;
+    color: orange;
+    margin-left: 5px;
+    opacity: 0;
+    transform: translateX(10px); /* Positioned slightly to the right initially */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect to slide in the arrow */
+.residents_button:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media screen and (max-width: 500px) {
+    /* Adjusting the layout for mobile screens */
+    .writers-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
+        gap: 10px; /* Add space between cards */
+        padding: 10px;
+        width: 100%;
+    }
+
+    /* Adjusting the writer card size for smaller screens */
+    .writer-card {
+        width: 100%; /* Take up full width of the grid cell */
+        height: 250px; /* Adjust height for mobile */
+        margin-bottom: 10px; /* Reduced space between cards */
+    }
+
+    /* Optional: Adjust text size inside the cards */
+    .writer-info h3 {
+        font-size: 1rem;
+    }
+
+    .writer-info p {
+        font-size: 0.8rem;
+    }
+}
+
+
+.gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gallery_title h2 {
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-family: 'Rutenia', sans-serif;
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.gallery-container img {
+    height: auto;
+    max-width: 100%;
+    width: 1100px;
+}
+
+.button-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.load-more-button {
+    padding: 10px 20px;
+    font-family: 'NAMU-1930', sans-serf;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+.load-more-button::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background-color: #e97604;
+}
+
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.map-container h1 {
+    font-family: 'Rutenia', sans-serif;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+iframe {
+    width: 100%;
+    height: 450px;
+    max-width: 800px;
+}
+
+
+
+
+/*Footer*/
+/* General styling */
+footer {
+    background-color: #C4CFBF; /* Green background */
+    padding: 20px 50px; /* Some padding for space */
+    color: rgb(0, 0, 0); /* White text color */
+    font-family: 'NAMU-1930', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centers content vertically */
+}
+
+.left {
+    text-align: center; /* Centers the text horizontally */
+}
+
+.right ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+}
+
+.right li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space between items */
+}
+
+.right i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* Styling for active links */
+.right a {
+    color: rgb(0, 0, 0); /* Ensures the link text is white */
+    text-decoration: none; /* Removes underline */
+}
+
+.right a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}

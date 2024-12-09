@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РОЛІТ - Мешканці</title>
+    <link rel="stylesheet" href="residents_styles.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVBAR SECTION -->
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="index.html" id="navbar_logo">
+                <i></i>Роліт
+            </a>            
+            <div class="navbar_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="history.html" class="navbar_links" id="history-button">Історія будинку</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="residents.html" class="navbar_links" id="residents-button">Мешканці</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="photos.html" class="navbar_links" id="photos-button">Фото</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="sources.html" class="navbar_links" id="sources-button">Джерела</a>
+                </li>
+                <li class="navbar_btn">
+                    <a href="index.html" class="button" id="about-button">На головну</a>
+                </li>
+            </ul>                       
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>
+            Мешканці будинку Роліт
+        </h1>
+    </div>
+    
+    <button onclick="sortWriters()"> За алфавітом</button>
+   
+    <div id="writers-container">
+        <!-- This section can display the first 5 writers -->
+        <div class="divider"></div> <!-- Divider between the first 5 writers and others -->
+    
+        <!-- Write your other writer cards here -->
+        <div class="writer-card">
+            <!-- Writer details -->
+        </div>
+        <!-- More writer cards can go here -->
+    
+    </div>
+    
+                 
+    <footer>
+        <div class="footer-container">
+            <div class="left">
+                <p>Rolit, 2024.</p>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <a href="https://www.tiktok.com/@budynok_rolit?_t=ZM-8s3nuXyuLx7&_r=1" target="_blank">
+                            <i class="fa-brands fa-tiktok"></i> Tik Tok
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/_rolit_building/?igsh=MXZ2cGM5dndoZGtuaA%3D%3D&utm_source=qr#" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </footer>
+
+
+    <script>
+        
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.navbar_menu');
+
+menu.addEventListener('click', function () {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const imageContainer = document.querySelector(".image-container");
+}
+)
+
+
+//Мешканці
+const writers = [ 
+    { imgSrc: "residents_photo/AndriyMalyshko.jpg", name: "Андрій Малишко", description: "поет, перекладач, журналіст, літературний критик, громадський діяч", link: "Malyshko.html" }, 
+    { imgSrc: "residents_photo/OlesHonchar.jpg", name: "Олесь Гончар", description: "письменник, громадський діяч", link: "Honchar.html" },
+    { imgSrc: "residents_photo/OstapVyshnia.jpg", name: "Остап Вишня", description: "письменник-сатирик, гуморист, перекладач", link: "Vyshnia.html" }, 
+    { imgSrc: "residents_photo/MykolaBazhan.jpg", name: "Микола Бажан", description: "поет, перекладач, культуролог, енциклопедист, філософ, громадський діяч", link: "Bazhan.html" }, 
+    { imgSrc: "residents_photo/PavloTychyna.jpg", name: "Павло Тичина", description: "поет, перекладач, публіцист, політик, громадський і державний діяч", link: "Tychyna.html" },
+    { imgSrc: "residents_photo/YuriiYanovskyi.jpg", name: "Юрій Яновський", description: "письменник, поет" },
+    { imgSrc: "residents_photo/BorysAntonenkoDavydovych.jpg", name: "Борис Антоненко-Давидович", description: "письменник, перекладач" }, 
+    { imgSrc: "residents_photo/MaksymRylskyi.jpg", name: "Максим Рильський", description: "поет-академік, перекладач, публіцист, громадський діяч, мовознавець" }, 
+    { imgSrc: "residents_photo/MykolaShpak.jpg", name: "Микола Шпак", description: "поет" }, 
+    { imgSrc: "residents_photo/OleksandrKorniychuk.jpg", name: "Олександр Корнійчук", description: "письменник, драматург, публіцист, громадський діяч" }, 
+    { imgSrc: "residents_photo/OleksiiVatulia.jpg", name: "Олексій Ватуля", description: "актор" }, 
+    { imgSrc: "residents_photo/VolodymyrLifshits.jpg", name: "Володимир Ліфшиц", description: "" },
+    { imgSrc: "residents_photo/DavidHofshtein.jpg", name: "Давид Гофштейн", description: "єврейський поет" }, 
+    { imgSrc: "residents_photo/MatviyTalalaievskyi.jpg", name: "Матвій Талалаєвський", description: "письменник, поет, перекладач, драматург" }, 
+    { imgSrc: "residents_photo/SavaHolovanivskyi.jpg", name: "Сава Голованівський", description: "письменник, поет, драматург, прозаїк, перекладач" }, 
+    { imgSrc: "residents_photo/AndriiHolovko.jpg", name: "Андрій Головко", description: "письменник, критик" }, 
+    { imgSrc: "residents_photo/SemenHordeev.jpg", name: "Семен Гордєєв", description: "поет, перекладач, журналіст" }, 
+    { imgSrc: "residents_photo/PavloDolyna.jpg", name: "Павло Долина", description: "актор, режисер" }, 
+    { imgSrc: "residents_photo/YevhenDrobiazko.jpg", name: "Євген Дроб’язко", description: "перекладач" }, 
+    { imgSrc: "residents_photo/TamaraZhevchenkoYanovska.jpg", name: "Тамара Жевченко-Яновська", description: "театральна акторка" }, 
+    { imgSrc: "residents_photo/LiubovZabashta.jpg", name: "Любов Забашта", description: "поетеса, драматургиня, прозаїкиня" }, 
+    { imgSrc: "residents_photo/ValeriaIvanenko.jpg", name: "Валерія Іваненко", description: "письменниця, перекладачка" }, 
+    { imgSrc: "residents_photo/OksanaIvanenko.jpg", name: "Оксана Іваненко", description: "письменниця" }, 
+    { imgSrc: "residents_photo/AbramKahan.jpg", name: "Абрам Каган", description: "єврейський письменник" }, 
+    { imgSrc: "residents_photo/LeibKvitko.jpg", name: "Лев (Лейб) Квітко", description: "поет-єврей" }, 
+    { imgSrc: "residents_photo/IsaakKipnis.jpg", name: "Ісаак Кіпніс", description: "єврейський письменник, поет, перекладач" }, 
+    { imgSrc: "residents_photo/LeonidKovalenko.jpg", name: "Леонід Коваленко", description: "літературознавець, літературний критик" }, 
+    { imgSrc: "residents_photo/OleksandrKopylenko.jpg", name: "Олександр Копиленко", description: "письменник, педагог, критик" }, 
+    { imgSrc: "residents_photo/IvanKocherga.jpg", name: "Іван Кочерга", description: "письменник-драматург" }, 
+    { imgSrc: "residents_photo/IvanKulyk.jpg", name: "Іван Кулик", description: "письменник, поет, прозаїк, перекладач" },
+{ imgSrc: "residents_photo/OleksiiKundzych.jpg", name: "Олексій Кундзіч", description: "письменник, перекладач, перекладознавець" },
+{ imgSrc: "residents_photo/TetianaLebedynska.jpg", name: "Тетяна Лебединська", description: "письменниця, перекладачка, літературна критикиня" },
+{ imgSrc: "residents_photo/ArkadiiLiubchenko.jpg", name: "Аркадій Любченко", description: "письменник, драматург, перекладач, літературний критик" },
+{ imgSrc: "residents_photo/BorysLiatoshynskyi.jpg", name: "Борис Лятошинський", description: "композитор, диригент, педагог, музичний громадський діяч" },
+{ imgSrc: "residents_photo/ValentynaMalyshko.jpg", name: "Валентина Малишко", description: "поетеса, сценаристка, перекладач" },
+{ imgSrc: "residents_photo/LarysaMasenko.jpg", name: "Лариса Масенко", description: "мовознавиця" },
+{ imgSrc: "residents_photo/TerentiiMasenko.jpg", name: "Терентій Масенко", description: "журналіст, поет, перекладач" },
+{ imgSrc: "residents_photo/IvanMykytenko.jpg", name: "Іван Микитенко", description: "письменник, драматург" },
+{ imgSrc: "residents_photo/DmytroMishchenko.jpg", name: "Дмитро Міщенко", description: "письменник, літературознавець" },
+{ imgSrc: "residents_photo/PetroPanch.jpg", name: "Петро Панч", description: "новеліст, повістяр, романіст" },
+{ imgSrc: "residents_photo/LeonidPervomaiskyi.jpg", name: "Леонід Первомайський", description: "письменник, поет, перекладач" },
+{ imgSrc: "residents_photo/OleksandrPidsukha.jpg", name: "Олександр Підсуха", description: "письменник" },
+{ imgSrc: "residents_photo/LutsianaPiontek.jpg", name: "Люціяна Піонтек", description: "письменниця" },
+{ imgSrc: "residents_photo/HryhoriiPolianker.jpg", name: "Григорій Полянкер", description: "єврейський письменник, прозаїк" },
+{ imgSrc: "residents_photo/NatanRybak.jpg", name: "Натан Рибак", description: "письменник-єврей" },
+{ imgSrc: "residents_photo/MykolaRudenko.jpg", name: "Микола Руденко", description: "філософ, громадський і політичний діяч, правозахисник" },
+{ imgSrc: "residents_photo/YakivSavchenko.jpg", name: "Яків Савченко", description: "поет, літературознавець" },
+{ imgSrc: "residents_photo/IvanSenchenko.jpg", name: "Іван Сенченко", description: "письменник" },
+{ imgSrc: "residents_photo/SemenSklyarenko.jpg", name: "Семен Скляренко", description: "письменник" },
+{ imgSrc: "residents_photo/LeonidSmilianskyi.jpg", name: "Леонід Смілянський", description: "письменник, літературний критик, драматург, кіносценарист" },
+{ imgSrc: "residents_photo/VadymSobko.jpg", name: "Вадим Собко", description: "письменник, прозаїк, драматург" },
+{ imgSrc: "residents_photo/YuriiSmolych.jpg", name: "Юрій Смолич", description: "письменник, журналіст, театральний критик" },
+{ imgSrc: "residents_photo/VolodymyrSosiura.jpg", name: "Володимир Сосюра", description: "поет, письменник, перекладач" },
+{ imgSrc: "residents_photo/MykhailoStelmakh.jpg", name: "Михайло Стельмах", description: "письменник, драматург, педагог, фольклорист" },
+{ imgSrc: "residents_photo/ZinoviiTolchakov.jpg", name: "Зіновій Толчаков", description: "графік, живописець" },
+{ imgSrc: "residents_photo/IiaTsarevych.jpg", name: "Ія Царевич", description: "педагогиня, піяністка, музична діячка" },
+{ imgSrc: "residents_photo/MykhailoChabanivskyi.jpg", name: "Михайло Чабанівський", description: "письменник, журналіст" },
+{ imgSrc: "residents_photo/VarvaraCherednychenko.jpg", name: "Варвара Чередниченко", description: "письменниця, педагогиня" },
+{ imgSrc: "residents_photo/AnatoliiShyian.jpg", name: "Анатолій Шиян", description: "письменник" },
+{ imgSrc: "residents_photo/MykytaShumylo.jpg", name: "Микита Шумило", description: "прозаїк, сценарист, перекладач" },
+{ imgSrc: "residents_photo/SamiyloShchupak.jpg", name: "Самійло Щупак", description: "критик, журналіст" },
+{ imgSrc: "residents_photo/EvgenyKyrylyuk.jpg", name: "Євген Кирилюк", description: "український літературознавець, член-кореспондент АН УРСР, голова редколегії і співавтор «Історії української літератури» у 8 т., 2-томного «Шевченківського словника»" },
+    { imgSrc: "residents_photo/YakovKachura.jpg", name: "Яків Качура", description: "український письменник" },
+    { imgSrc: "residents_photo/MykolaDubov.jpg", name: "Микола Дубов", description: "російський радянський письменник" },
+    { imgSrc: "residents_photo/YuriyKobyletskyi.jpg", name: "Юрій Кобилецький", description: "український радянський письменник та літературознавець, доктор філологічних наук, професор" },
+    { imgSrc: "residents_photo/Matvii(Motl)Hartzman.jpg", name: "Матвій (Мотл) Гарцман", description: "український єврейський поет" },
+    { imgSrc: "residents_photo/OleksiyNovitskyi.jpg", name: "Олексій Новицький", description: "історик мистецтва, бібліограф, почесний член Київського товариства старожитностей і мистецтв, академік АН УРСР, автор досліджень про Тараса Шевченка — художника" },
+    { imgSrc: "residents_photo/MariaPrygara.jpg", name: "Марія Пригара", description: "українська поетеса, письменниця, перекладачка" },
+    { imgSrc: "residents_photo/VarvaraMaslyuchenko.jpg", name: "Варвара Маслюченко", description: "українська акторка" },
+    { imgSrc: "residents_photo/no_image.jpg", name: "Володимир Торин", description: "невідомо" },
+    { imgSrc: "residents_photo/no_image.jpg", name: "Леонід Вишеславський", description: "поет, літературознавець, перекладач, педагог" },
+    { imgSrc: "residents_photo/no_image.jpg", name: "Марія Донець-Тессейр", description: "оперна співачка, педагогиня" }, 
+    { imgSrc: "residents_photo/no_image.jpg", name: "Ліпа (Ліпе) Рєзник", description: "єврейський письменник, поет, драматург, перекладач" },
+    { imgSrc: "residents_photo/no_image.jpg", name: "Анель Толчакова", description: "художниця" },
+    { imgSrc: "residents_photo/no_image.jpg", name: "Григорій Яковенко", description: "письменник" }
+];
+
+const container = document.getElementById('writers-container');
+let showDivider = true;
+
+function displayWriters(writersArray) {
+    container.innerHTML = ""; // Clear the container
+
+    writersArray.forEach((writer, index) => {
+        container.innerHTML += `
+            <div class="writer-card">
+                <img src="${writer.imgSrc}" alt="${writer.name}">
+                <div class="writer-info">
+                    <h2>${writer.name}</h2>
+                    <p>${writer.description}</p>
+                    ${index < 5 ? '<a href="' + writer.link + '" class="details-button">Детальніше</a>' : ''}
+                </div>
+            </div>
+        `;
+
+        if (index === 4 && showDivider) {
+            container.innerHTML += `<div class="divider"></div>`;
+        }
+    });
+}
+
+// Binary tree for sorting
+class TreeNode {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BinarySearchTree {
+    constructor() {
+        this.root = null;
+    }
+
+    insert(value) {
+        const newNode = new TreeNode(value);
+        if (!this.root) {
+            this.root = newNode;
+        } else {
+            this.insertNode(this.root, newNode);
+        }
+    }
+
+    insertNode(node, newNode) {
+        const nodeSurname = node.value.name.split(" ").pop();
+        const newSurname = newNode.value.name.split(" ").pop();
+
+        if (newSurname.localeCompare(nodeSurname, 'uk') < 0) {
+            if (!node.left) {
+                node.left = newNode;
+            } else {
+                this.insertNode(node.left, newNode);
+            }
+        } else {
+            if (!node.right) {
+                node.right = newNode;
+            } else {
+                this.insertNode(node.right, newNode);
+            }
+        }
+    }
+
+    inOrder() {
+        const result = [];
+        this.traverseInOrder(this.root, result);
+        return result;
+    }
+
+    traverseInOrder(node, result) {
+        if (node) {
+            this.traverseInOrder(node.left, result);
+            result.push(node.value);
+            this.traverseInOrder(node.right, result);
+        }
+    }
+}
+
+function sortWriters() {
+    const bst = new BinarySearchTree();
+    writers.forEach(writer => bst.insert(writer));
+    const sortedWriters = bst.inOrder();
+
+    showDivider = false; // Remove divider during sorting
+    displayWriters(sortedWriters);
+}
+
+// Show initial writers
+displayWriters(writers);
+
+
+    </script>
+    </body>
+</html>
